@@ -1,88 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Letter</title>
-    <style>
-        body {
-            background-color: #f5f1e8;
-            font-family: 'Courier Prime', Courier, monospace;
-            font-size: 24px;
-            color: #333333;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            white-space: pre-wrap;
-        }
-
-        /* Centered Password Screen */
-        #password-screen {
-            position: fixed;
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%;
-            background: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        input {
-            border: none;
-            border-bottom: 1px solid #333;
-            font-family: 'Courier Prime', Courier, monospace;
-            font-size: 14px;
-            text-align: center;
-            outline: none;
-            padding: 5px;
-            margin-top: 10px;
-        }
-
-        /* Hide the letter by default */
-        #letter-content {
-            display: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Letter</title>
+<style>
+body {background-color: #f5f1e8; font-family: 'Courier Prime', Courier, monospace; font-size: 24px; color: #333333; line-height: 1.6; max-width: 800px; margin: 50px auto; padding: 20px; white-space: pre-wrap; }
+#password-screen {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; }
+input {border: none; border-bottom: 1px solid #333; font-family: 'Courier Prime', Courier, monospace; font-size: 22px; text-align: center; outline: none; padding: 5px; margin-top: 10px; }
+#letter-content {display: none; }
+a { color: #333333; text-decoration: underline; }
+</style>
 </head>
 <body>
+<div id="password-screen">
+<label for="password-input">enter password</label>
+<input type="password" id="password-input" onkeydown="checkPassword(event)" autofocus>
+</div>
+<div id="letter-content">
+<a href="https://open.spotify.com/track/4R2kfaDFZgYgRKhFpMDp3F" target="_blank">in every universe,</a>
 
-    <!-- Password Prompt Overlay -->
-    <div id="password-screen">
-        <label for="password-input">enter password</label>
-        <input type="password" id="password-input" onkeydown="checkPassword(event)" autofocus>
-    </div>
+To my qushairy,
 
-    <!-- Your Actual Letter -->
-    <div id="letter-content">Dear [Name],
+Its still hard for me to accept that you’re gone. The lines blur, i dont know at what moment did i lose you for good, which moment was the last time i held your hand and felt the warmth of your body.
+I still eat keutiau kungfu and think of you.
+I cant bear having memories of you around, photos, videos of us laughing like the whole world is ours. I cant bear seeing how happy we were, so i got rid of all evidence. I thought of keeping them as proof that i was once so deeply loved by someone who was ready to give me everything, but the pain overrides all ideas to honour your existence, our existence. All pictures left of you in my possession are those with parts of your face. It got me thinking that one day I will forget your face, your smile, your sneaky jokes, the sound of your laughter, the way your hand feels against mine, and the rhythm of your heartbeat.
 
-Type your letter here...
+There were warnings though. My mistake, I ignored your dying signs, as you ignored mine.
+Now that you’re gone, I’ll be in the gray forever.
 
-Best,
-[Your Name]</div>
+That night when i called for the last time, I had no idea who i was talking to. I have no way of knowing if the person i was talking to was <i>my sweet boy</i> who came back to me, just for a while to bid me farewell for one last time, or if it wasn't. But i like to believe it was you.
+I remember being told to forget our 7 months together. Whether it was by you or that stranger, well, it’s cruel nevertheless. 7 months is a long time, but i wonder if my time with you ever reached 7 months at all, my sweet love. The lines became so blurry that i wonder at what point did you 
 
-    <script>
-        function checkPassword(event) {
-            // Checks if the reader pressed the 'Enter' key
-            if (event.key === 'Enter') {
-                const input = document.getElementById('password-input').value;
-                
-                // CHANGE YOUR PASSWORD HERE (Keep it lowercase inside the quotes)
-                const correctPassword = 'mysweetboy'; 
+I love you, baby.
+Perhaps in every universe, we loved and lost us for good.
 
-                if (input.toLowerCase() === correctPassword) { 
-                    // Hide the password entry and show the letter
-                    document.getElementById('password-screen').style.display = 'none';
-                    document.getElementById('letter-content').style.display = 'block';
-                } else {
-                    alert('Incorrect password. Try again.');
-                    document.getElementById('password-input').value = '';
-                }
-            }
-        }
-    </script>
+
+To stranger,
+the person reading this, 
+
+Thank you for giving me time.
+<i>Please don’t come back.</i>
+</div>
+<script>
+function checkPassword(event) {
+if (event.key === 'Enter') {
+const input = document.getElementById('password-input').value;
+const correctPassword = 'mysweetboy';
+if (input.toLowerCase() === correctPassword) {
+document.getElementById('password-screen').style.display = 'none';
+document.getElementById('letter-content').style.display = 'block';
+} else {
+alert('Incorrect password. Try again.');
+document.getElementById('password-input').value = '';
+}
+}
+}
+</script>
 </body>
 </html>
