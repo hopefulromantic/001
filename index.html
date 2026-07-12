@@ -3,22 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <title>Letter</title>
+
 <style>
-body {background-color: #f5f1e8; font-family: 'Courier Prime', Courier, monospace; font-size: 22px; color: #333333; line-height: 1.6; max-width: 800px; margin: 50px auto; padding: 20px; white-space: pre-wrap; }
-#password-screen {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; }
-input {border: none; border-bottom: 1px solid #333; font-family: 'Courier Prime', Courier, monospace; font-size: 22px; text-align: center; outline: none; padding: 5px; margin-top: 10px; }
-#letter-content {display: none; }
-a { color: #333333; text-decoration: underline; }
+body {
+    background-color: #f5f1e8;
+    font-family: 'Courier Prime', Courier, monospace;
+    font-size: 22px;
+    color: #333333;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    white-space: pre-wrap;
+}
+
+#password-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid #333;
+    font-family: 'Courier Prime', Courier, monospace;
+    font-size: 22px;
+    text-align: center;
+    outline: none;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+#letter-content {
+    display: none;
+}
+
+a {
+    color: #333333;
+    text-decoration: underline;
+}
+
+textarea,
+button {
+    font-family: inherit;
+    font-size: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 8px 18px;
+    cursor: pointer;
+}
 </style>
 </head>
-<body>
-<div id="password-screen">
-<label for="password-input">enter password</label>
-<input type="password" id="password-input" onkeydown="checkPassword(event)" autofocus>
-</div>
-<div id="letter-content">
-<a href="https://open.spotify.com/track/4pvb0WLRcMtbPGmtejJJ6y?si=b1a7b5f6dc8a4285" target="_blank">exile,</a>
 
+<body>
+
+<div id="password-screen">
+    <label for="password-input">enter password</label>
+    <input type="password" id="password-input" onkeydown="checkPassword(event)" autofocus>
+</div>
+
+<div id="letter-content">
+
+<a href="https://open.spotify.com/playlist/6friHjMHU7tR2NhfXDfRHi?si=ZrpmJAugRS6QuFTEPevRTg&utm_source=copy-link&pi=-IPK9xxOTG-h6" target="_blank">
+spotify playlist 001
+</a>
 
     To my qushairy,
 
@@ -27,7 +90,7 @@ a { color: #333333; text-decoration: underline; }
 
   I still eat keutiau kungfu and think of you.
   
-  I cant bear having memories of you around, photos, videos of us laughing like the whole world is ours. I cant bear seeing how happy we were, so i got rid of all evidence. I thought of keeping them as proof that i was once so deeply loved by someone who was ready to give me everything, but the pain overrides all ideas to honour your existence. Our existence. 
+  I cant bear having memories of you around, photos, videos of us laughing like the whole world is ours. I cant bear seeing how happy we were, so i got rid of all evidence. I thought of keeping them as proof that i was once so deeply loved by someone who was ready to give me everything, but the pain overrides all ideas to honour your existence. Our existence.
   
   All pictures left of you in my possession are those with parts of your face. It got me thinking that one day I will forget your face, your smile, your sneaky jokes, the sound of your laughter, the way your hand feels against mine, and the rhythm of your heartbeat.
 
@@ -44,25 +107,45 @@ I love you forever.
 
   
     To stranger,
-    the person reading this, 
+    the person reading this,
 
 Thank you for giving me time.
 <i>Please don’t come back.</i>
+
+<hr>
+
+<form action="https://formspree.io/f/mvzepvbo" method="POST">
+    <p><strong>I've read this letter.</strong></p>
+
+    <textarea
+        name="message"
+        rows="4"
+        placeholder="Leave a message (optional)..."
+    ></textarea>
+
+    <br><br>
+
+    <button type="submit">I've read it</button>
+</form>
+
 </div>
+
 <script>
 function checkPassword(event) {
-if (event.key === 'Enter') {
-const input = document.getElementById('password-input').value;
-const correctPassword = 'mysweetboy';
-if (input.toLowerCase() === correctPassword) {
-document.getElementById('password-screen').style.display = 'none';
-document.getElementById('letter-content').style.display = 'block';
-} else {
-alert('Incorrect password. Try again.');
-document.getElementById('password-input').value = '';
-}
-}
+    if (event.key === 'Enter') {
+        const input = document.getElementById('password-input').value;
+        const correctPassword = 'qushairy33';
+
+        if (input.toLowerCase() === correctPassword) {
+            document.getElementById('password-screen').style.display = 'none';
+            document.getElementById('letter-content').style.display = 'block';
+        } else {
+            alert('Incorrect password. Try again.');
+            document.getElementById('password-input').value = '';
+        }
+    }
 }
 </script>
+
 </body>
 </html>
